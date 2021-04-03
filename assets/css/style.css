@@ -102,10 +102,7 @@ img {
     list-style-type: none;
 }
 
-.nav{
-    display: inline-block;
-}
-
+.nav ,
 .nav > li {
     display: inline-block;
 }
@@ -207,8 +204,9 @@ img {
 
 .content .content-section {
     width: 800px;
+    max-width: 100%;
     margin: auto;
-    padding: 64px 0px 112px;
+    padding: 64px 16px 112px;
 }
 
 .content .section-heading {
