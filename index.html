@@ -7,15 +7,16 @@
     <title>F8 The Band</title>
     <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="./assets/fonts_icons/themify-icons/themify-icons.css">
 </head>
 <body>
     <!-- Main Bao boc trang web -->
     <div class="main">
         <!-- Phan Header/ dau trang  -->
-        <div class="header">
+        <div id="header" class="header">
             <!-- Begin: Nav -->
-            <ul class="nav">
+            <ul id="nav" class="nav">
                 <li><a href="#">Home</a></li>
                 <li><a href="#band">BAND</a></li>
                 <li><a href="#tour">Tour</a></li>
@@ -34,6 +35,9 @@
             <!-- Begin: Search button -->
             <div class="search-btn">
                 <i class="header-search ti-search"></i>
+            </div>
+            <div id="mobile-menu" class="mobile-menu-btn">
+                <i class="header-menu ti-menu"></i>
             </div>
             <!-- End: Search button -->
 
@@ -168,5 +172,35 @@
         </div>
         <!-- End Footer -->
     </div>
+    <script>
+        var header =document.getElementById('header');
+        var mobileMenu =document.getElementById('mobile-menu');
+        var headerHeight =header.clientHeight
+        // click menu button
+        mobileMenu.onclick = function(){
+            var isClose = header.clientHeight === headerHeight;
+            if(isClose){
+                header.style.height = 'auto';
+                mobileMenu.style.backgroundColor='#ccc';
+            } else {
+                header.style.height = null;
+                mobileMenu.style.backgroundColor='#000';
+            }
+        }
+        // Tự động đóng khi chọn menu
+        var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+        for (var i = 0; i < menuItems.length; i++){
+            var menuItem = menuItems[i];
+            menuItem.onclick = function(event){
+                var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav')
+                if (isParentMenu){
+                    event.preventDefault();
+                } else{
+                    header.style.height = null;
+                    mobileMenu.style.backgroundColor='#000';
+                }
+            }
+        }
+    </script>
 </body>
 </html>

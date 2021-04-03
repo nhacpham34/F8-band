@@ -154,23 +154,37 @@ img {
     font-size: 14px;
 }
 
-.header .search-btn {
-    height: 100%;
+.header .search-btn ,
+.header .mobile-menu-btn {
     width: 62px;
     float: right;
     text-align: center;
-    cursor: pointer;
 }
 
-.header .search-btn:hover {
-    background-color: #f44336;
-} 
+.header .mobile-menu-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 
-.header .header-search {
+.header .header-search ,
+.header .header-menu {
     color: #fff;
     font-size: 16px;
     line-height: 46px;
 }
+
+
+
+.header .mobile-menu-btn:hover {
+    background-color: #ccc;
+} 
+
+.header .search-btn:hover {
+    background-color: #f44336;
+    cursor: pointer;
+} 
+
 .slider{
     position: relative;
     padding-top: 50%;
