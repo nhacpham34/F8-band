@@ -14,6 +14,11 @@
 
 /* Mobile */
 @media (max-width : 739px){
+    .s-col-full,
+    .s-full-width {
+        width: 100% !important;
+    }
+
     .header {
         overflow: hidden;
     }
@@ -43,5 +48,12 @@
         padding: 5px 41px;
     }
     
+    .content .member-avata{
+        width: 60%;
+    }
+
+    .contact-form{
+        margin-top: 16px;
+    }
 
 }
